@@ -7,8 +7,10 @@ const userSchema = new Schema({
     password: {type: String, required: true},
     oldPassword: {type: String, required: false},
     firstName: {type: String, required: true},
-    lastNumber: {type: String, required: true},
+    lastName: {type: String, required: true},
     profilePicture: {type: String, default: "https://www.nicepng.com/png/detail/914-9144016_avatar-pictures-anime-male-hair-reference.png"},
+},{
+    timestamps: true
 })
 
 const User = mongoose.model("User", userSchema);

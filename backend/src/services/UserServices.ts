@@ -16,9 +16,11 @@ class UserServices{
         try{
             let {email, password} = data
             let user: any = data;
+            console.log(user)
             let hashedPassword = await bcrypt.hash(password, 6)
             user.password = hashedPassword
             user = await this.userRepository.save(user)
+            
             return {
                 message: "Signed Up Successfully",
                 status:201,
@@ -39,11 +41,9 @@ class UserServices{
             // change this any to an Interface
             let dbUser: any = await this.userRepository.findOneByEmail(email)
             let hashedPassword = await bcrypt.compare(password, dbUser.password)
-            console.log(dbUser)
             if (hashedPassword){
 
                 let token = jwt.sign({_id: dbUser._id, email}, jwtSecret)
-                console.log(token)
                 return {
                     message: "Signed In Successfully",
                     status: "200",
