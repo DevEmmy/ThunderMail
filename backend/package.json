@@ -4,7 +4,8 @@
     "main": "server.js",
     "scripts": {
         "test": "echo 'Error: no test specified' && exit 1",
-        "start": "ts-node server.ts"
+        "start": "ts-node server.ts",
+        "dev": "ts-node-dev server.ts"
     },
     "keywords": [],
     "author": "",
@@ -14,7 +15,8 @@
         "dotenv": "^16.3.1",
         "express": "^4.18.2",
         "mongoose": "^8.0.4",
-        "open": "^10.0.3"
+        "open": "^10.0.3",
+        "ts-node-dev": "^2.0.0"
     },
     "devDependencies": {
         "@types/cors": "^2.8.17",
