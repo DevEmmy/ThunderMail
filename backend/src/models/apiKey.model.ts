@@ -2,7 +2,8 @@ import mongoose from "mongoose";
 import { Schema } from "mongoose";
 
 const schema = new Schema({
-    user: {type: Schema.Types.ObjectId, ref: "User", unique: true}
+    user: {type: Schema.Types.ObjectId, ref: "User", unique: true},
+    apiKey: {type: String, unique: true}
 })
 
 const ApiKey = mongoose.model("ApiKey", schema);
